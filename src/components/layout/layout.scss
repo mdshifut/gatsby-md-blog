@@ -42,6 +42,8 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+
+  color: #e27689;
 }
 a:active,
 a:hover {
@@ -187,7 +189,7 @@ textarea {
 html {
   font: 112.5%/1.45em georgia, serif;
   box-sizing: border-box;
-  overflow-y: scroll;
+  // overflow-y: scroll;
 }
 * {
   box-sizing: inherit;
@@ -199,7 +201,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
+  color: #888;
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -619,4 +621,53 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+.page-bg {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 100px;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  z-index: 99;
+  color: #fff;
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    opacity: 0.5;
+    background: #222629;
+    z-index: -1;
+  }
+}
+
+.body-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-height: 100vh;
+  overflow-x: hidden;
+  flex-basis: 80%;
+}
+
+.main-inner {
+  flex-grow: 1;
+}
+
+footer.main-footer {
+  margin-top: auto;
+  text-align: center;
+  background: #dce3e2;
+  padding: 3em 0 4em 0;
+  font-size: 0.8em;
 }
